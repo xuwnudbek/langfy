@@ -1,0 +1,22 @@
+{
+  "welcome.title": "Chet tilini 6 oyda o'rganing",
+  "welcome.subtitle": "Amerika texnologiyasi asosida yaratilgan darsliklar orqali sizga chet tillarini o'rgatamiz.",
+  "welcome.start": "Boshlash",
+  "auth.login": "Kirish",
+  "auth.register": "Ro'yxatdan o'tish",
+  "auth.continue": "Davom etish",
+  "auth.enter_phone": "Iltimos, telefon raqamingizni kiriting",
+  "auth.enter_password": "Iltimos, parolni kiriting",
+  "auth.continue_with_google": "Google orqali davom etish",
+  "auth.or": "yoki",
+  "auth.email": "Email",
+  "auth.facebook": "Facebook",
+  "auth.confirm.edit_phone": "Telefon raqamni o'zgartirish",
+  "auth.confirm.confirm_phone": "Telefon raqamni tasdiqlash",
+  "auth.confirm.we_have_sent_code": "Biz sizning telefon raqamingizga tasdiqlash kodini SMS orqali jo'natdik",
+  "auth.confirm.confirm": "Tasdiqlash",
+  "auth.confirm.remaining_time": "Tasdiqlash uchun qolgan vaqt:",
+  "auth.confirm.resend_code": "Kodni qayta jo'natish",
+  "auth.secure.secure_your_account": "Hisobingizni himoya qiling",
+  "common.back": "Orqaga"
+}
