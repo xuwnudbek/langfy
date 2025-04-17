@@ -38,7 +38,7 @@ class _CustomDropdown2State extends State<CustomDropdown2> {
       child: DropdownButton2(
         buttonStyleData: ButtonStyleData(
           decoration: BoxDecoration(
-            color: theme.colorScheme.surface,
+            color: AppColors.innerGrey,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: AppColors.divider,

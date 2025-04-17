@@ -9,7 +9,6 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       primary: AppColors.primary,
-      // secondary: AppColors.secondary,
       error: AppColors.error,
       surface: AppColors.surface,
     ),
@@ -39,7 +38,7 @@ class AppTheme {
     ),
     cardTheme: CardTheme(
       elevation: 0,
-      color: AppColors.surface,
+      color: AppColors.innerGrey,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: const BorderSide(
@@ -50,7 +49,7 @@ class AppTheme {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        backgroundColor: AppColors.divider.withOpacity(0.1),
+        backgroundColor: AppColors.innerGrey,
         foregroundColor: AppColors.textDark,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -67,40 +66,31 @@ class AppTheme {
         padding: const EdgeInsets.fromLTRB(20, 14, 20, 14),
       ),
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.backgroundLight,
+      selectedItemColor: AppColors.primary,
+      unselectedItemColor: AppColors.textGrey,
+      selectedIconTheme: IconThemeData(
+        color: AppColors.primary,
+        size: 24,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: AppColors.textGrey,
+        size: 24,
+      ),
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+    ),
+
+    // ListTile
+    listTileTheme: ListTileThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+    ),
   );
 
-  static final ThemeData darkTheme = ThemeData(
-    useMaterial3: true,
-    fontFamily: "SpotifyMix",
-    brightness: Brightness.dark,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.primary,
-      brightness: Brightness.dark,
-      primary: AppColors.primary,
-      secondary: AppColors.secondary,
-      error: AppColors.error,
-      surface: AppColors.backgroundDark,
-    ),
-    scaffoldBackgroundColor: AppColors.backgroundDark,
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.backgroundDark,
-      foregroundColor: AppColors.textDark,
-    ),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: AppColors.textDark),
-      bodyMedium: TextStyle(color: AppColors.textDark),
-      bodySmall: TextStyle(color: AppColors.textGrey),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.textDark,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        fixedSize: const Size(double.infinity, 48),
-        padding: const EdgeInsets.fromLTRB(20, 14, 20, 14),
-      ),
-    ),
-  );
+  static final ThemeData darkTheme = ThemeData();
 }

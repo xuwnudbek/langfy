@@ -36,8 +36,13 @@ class AppColors {
   static const Color warningDark = Color(0xFFF57C00);
 
   static const Color accent = Color(0xFF64B5F6);
-  static const Color surface = Color(0xFFF9F9F9);
+  static const Color surface = Color(0xFFF2F2F7);
 
   static const Color disabled = Color(0xFFBDBDBD);
   static const Color divider = Color(0xFFE0E0E0);
+  
+  
+  static const Color innerGrey = Color(0xFFF9F9F9);
+
+
 }

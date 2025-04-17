@@ -96,7 +96,7 @@ class _CustomInputState extends State<CustomInput> {
             ),
           ),
           filled: true,
-          fillColor: _hasFocus ? Colors.white : const Color(0xffF9F9F9),
+          fillColor: _hasFocus ? Colors.white : AppColors.innerGrey,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16.0,
             vertical: 16.0,

@@ -26,13 +26,12 @@ class _BackButton2State extends State<BackButton2> {
       },
       child: Row(
         children: [
-          const SizedBox(width: 16),
           Icon(
             Icons.arrow_back_ios_rounded,
             color: theme.colorScheme.primary,
             size: 18,
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 4),
           Text(
             widget.text ?? "common.back".tr,
             style: TextStyle(

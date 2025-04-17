@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -121,7 +122,7 @@ class RegisterPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.email_rounded),
+                          const Icon(CupertinoIcons.mail),
                           const SizedBox(width: 8),
                           Text("auth.email".tr),
                         ],

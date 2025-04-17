@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:langfy/ui/widgets/custom_dropdown2.dart';
 import 'package:langfy/ui/widgets/custom_input.dart';
 import 'package:langfy/ui/widgets/outline_button2.dart';
-import 'package:langfy/ui/widgets/password_input.dart';
 
 class FinishRegisterPage extends StatefulWidget {
   const FinishRegisterPage({super.key});
@@ -104,7 +103,7 @@ class _FinishRegisterPageState extends State<FinishRegisterPage> {
                       "auth.finish.date_of_birth".tr,
                     ),
                   const Icon(
-                    Icons.calendar_month_rounded,
+                    CupertinoIcons.calendar,
                   )
                 ],
               ),
