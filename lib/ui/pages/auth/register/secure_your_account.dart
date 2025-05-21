@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:langfy/ui/pages/main/main_page.dart';
 import 'package:langfy/ui/widgets/back_button2.dart';
 import 'package:langfy/ui/widgets/password_input.dart';
 
@@ -61,7 +62,9 @@ class _SecureYourAccountPageState extends State<SecureYourAccountPage> {
 
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.offAll(() => const MainPage());
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

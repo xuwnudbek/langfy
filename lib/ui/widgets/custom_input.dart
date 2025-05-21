@@ -13,6 +13,7 @@ class CustomInput extends StatefulWidget {
   final bool autofocus;
   final InputDecoration? decoration;
   final String? Function(String?)? validator;
+  final Widget? prefix; // Added prefix widget
 
   const CustomInput({
     super.key,
@@ -26,6 +27,7 @@ class CustomInput extends StatefulWidget {
     this.autofocus = false,
     this.decoration,
     this.validator,
+    this.prefix, // Added prefix widget
   });
 
   @override
@@ -83,6 +85,7 @@ class _CustomInputState extends State<CustomInput> {
           hintStyle: textTheme.bodyMedium?.copyWith(
             color: theme.hintColor,
           ),
+          prefix: widget.prefix, // Added prefix widget here
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide(
@@ -104,117 +107,5 @@ class _CustomInputState extends State<CustomInput> {
         ),
       ),
     );
-  }
-}
-
-enum PasswordStrength {
-  empty,
-  weak,
-  medium,
-  strong,
-}
-
-class PasswordStrengthIndicator extends StatelessWidget {
-  final PasswordStrength strength;
-
-  const PasswordStrengthIndicator({
-    super.key,
-    required this.strength,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 4,
-                decoration: BoxDecoration(
-                  color: _getColorForSegment(0),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(2),
-                    bottomLeft: Radius.circular(2),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(width: 2),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 4,
-                color: _getColorForSegment(1),
-              ),
-            ),
-            const SizedBox(width: 2),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 4,
-                decoration: BoxDecoration(
-                  color: _getColorForSegment(2),
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(2),
-                    bottomRight: Radius.circular(2),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 4),
-        Text(
-          _getStrengthText(),
-          style: TextStyle(
-            fontSize: 12,
-            color: _getStrengthColor(),
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Color _getColorForSegment(int segment) {
-    switch (strength) {
-      case PasswordStrength.weak:
-        return segment == 0 ? Colors.red : Colors.grey.shade300;
-      case PasswordStrength.medium:
-        return segment <= 1 ? Colors.orange : Colors.grey.shade300;
-      case PasswordStrength.strong:
-        return Colors.green;
-      default:
-        return Colors.grey.shade300;
-    }
-  }
-
-  Color _getStrengthColor() {
-    switch (strength) {
-      case PasswordStrength.weak:
-        return Colors.red;
-      case PasswordStrength.medium:
-        return Colors.orange;
-      case PasswordStrength.strong:
-        return Colors.green;
-      default:
-        return Colors.grey;
-    }
-  }
-
-  String _getStrengthText() {
-    switch (strength) {
-      case PasswordStrength.weak:
-        return 'auth.secure.weak_password'.tr;
-      case PasswordStrength.medium:
-        return 'auth.secure.medium_password'.tr;
-      case PasswordStrength.strong:
-        return 'auth.secure.strong_password'.tr;
-      default:
-        return '';
-    }
   }
 }

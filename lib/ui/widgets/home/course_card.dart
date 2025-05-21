@@ -6,10 +6,12 @@ class CourseCard extends StatelessWidget {
     super.key,
     this.progress,
     this.buttonText,
+    this.onPressed,
   });
 
   final double? progress;
   final String? buttonText;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,9 @@ class CourseCard extends StatelessWidget {
                     ),
                   const Spacer(),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onPressed?.call();
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: theme.colorScheme.surfaceContainerHigh,
                       elevation: 0,

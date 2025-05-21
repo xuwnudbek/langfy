@@ -25,7 +25,7 @@ class RegisterPage extends StatelessWidget {
               Row(
                 children: [
                   SvgPicture.asset(
-                    "assets/icons/langfy.svg",
+                    "assets/icons/logo2.svg",
                     width: Get.width * 0.33,
                   ),
                   const Spacer(),

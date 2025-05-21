@@ -40,32 +40,38 @@ class _PersonalInformationState extends State<PersonalInformation> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+
     return Scaffold(
+      appBar: AppBar(
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 16.0),
+          child: BackButton2(),
+        ),
+        leadingWidth: 80,
+        title: Text(
+          "Personal information",
+          style: textTheme.titleLarge?.copyWith(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: colorScheme.onSurface,
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: SvgPicture.asset("assets/icons/edit.svg"),
+            onPressed: () {},
+          ),
+        ],
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const BackButton2(),
-                  const Text("Personal information"),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          icon: SvgPicture.asset("assets/icons/edit.svg"),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
               CustomInput(
                 controller: _fullNameController,
                 labelText: 'auth.finish.full_name'.tr,

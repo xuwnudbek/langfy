@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:langfy/ui/pages/course/other_course/other_course_page.dart';
+import 'package:langfy/ui/pages/main/screens/home/pages/notification/notificaion_page.dart';
 import 'package:langfy/ui/widgets/home/banner_card.dart';
 import 'package:langfy/ui/widgets/home/course_card.dart';
 
@@ -37,7 +39,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   alignment: AlignmentDirectional.topEnd,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => const NotificaionPage());
+                    },
                     icon: const Icon(
                       CupertinoIcons.bell,
                     ),
@@ -70,7 +74,14 @@ class HomeScreen extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: 4,
                       itemBuilder: (_, index) {
-                        return const CourseCard();
+                        return CourseCard(
+                          onPressed: () {
+                            Get.to(
+                              () => const OtherCoursePage(),
+                              transition: Transition.rightToLeft,
+                            );
+                          },
+                        );
                       },
                     ),
                   ],

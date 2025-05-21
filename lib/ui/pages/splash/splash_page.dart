@@ -14,14 +14,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-
     initialize();
   }
 
   Future<void> initialize() async {
-    // Simulate a delay for splash screen
-    await Future.delayed(const Duration(seconds: 1));
-    // Navigate to the main page after the delay
+    await Future.delayed(const Duration(seconds: 5));
     Get.offAll(() => const WelcomePage());
   }
 
@@ -34,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                'assets/icons/langfy.svg',
+                'assets/icons/logo2.svg',
                 width: Get.width * 0.6,
                 // height: 200,
               ),

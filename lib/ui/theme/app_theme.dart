@@ -47,6 +47,16 @@ class AppTheme {
         ),
       ),
     ),
+    // chipTheme: const ChipThemeData(
+    //   backgroundColor: AppColors.innerGrey,
+    //   selectedColor: AppColors.primary,
+    //   secondarySelectedColor: AppColors.primary,
+    //   disabledColor: AppColors.textGrey,
+    //   selectedShadowColor: AppColors.primary,
+    //   shape: RoundedRectangleBorder(
+    //     borderRadius: BorderRadius.all(Radius.circular(12)),
+    //   ),
+    // ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: AppColors.innerGrey,
@@ -90,6 +100,7 @@ class AppTheme {
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 10),
     ),
+    dividerColor: Colors.transparent,
   );
 
   static final ThemeData darkTheme = ThemeData();

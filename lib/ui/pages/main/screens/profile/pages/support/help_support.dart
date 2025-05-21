@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:langfy/ui/pages/main/screens/profile/pages/support/pages/contact_us_page.dart';
+import 'package:langfy/ui/pages/main/screens/profile/pages/support/pages/faq_page.dart';
 import 'package:langfy/ui/widgets/back_button2.dart';
 
 class HelpSupport extends StatefulWidget {
@@ -52,7 +54,7 @@ class _HelpSupportState extends State<HelpSupport> with TickerProviderStateMixin
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -73,7 +75,19 @@ class _HelpSupportState extends State<HelpSupport> with TickerProviderStateMixin
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(height: 16),
+              Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // FAQs
+                    const FaqPage(),
+                    // Contact Us
+                    const ContactUsPage(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
